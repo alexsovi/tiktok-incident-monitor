@@ -4,8 +4,6 @@ import sqlite3
 import os
 from datetime import datetime
 from functools import partial
-# install these dependencies if missing: aiogram>=3.0.0 httpx>=0.25.0 python-dotenv>=1.0.0
-# and also create .env file and set TELEGRAM_BOT_TOKEN and PROXY_URL values
 import httpx
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
