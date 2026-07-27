@@ -264,9 +264,8 @@ class IncidentMonitor:
     async def notify_scam_start(self, scam_results, st, label):
         msg = f"🚨 {label}: АВАРИЙКА\n\nНачало: {st.strftime('%H:%M:%S')}\n"
         for r in scam_results:
-            url_name = r['url'].split('/')[-1]
             version_info = f" ({r.get('version')})" if r.get('version') else ""
-            msg += f"• <code>{url_name}</code>{version_info}\n"
+            msg += f"• <code>{r['url']}</code>{version_info}\n"
         await self._broadcast(msg)
 
     async def notify_scam_end(self, st, dur, label):
